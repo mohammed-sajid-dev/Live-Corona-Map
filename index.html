@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corona Map</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+</head>
+
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    #map {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .marker {
+        background-image: url('mapbox-icon.png');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .mapboxgl-popup-content {
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    .mapboxgl-popup {
+        max-width: 200px;
+        font: 12px/20px
+    }
+
+    .navbar {
+        background-color: rgb(28, 26, 41);
+        /* border: rgb(0, 0, 179) 2px solid; */
+
+    }
+
+    li{
+        display:inline-flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    li a{
+        padding: 6px;
+        text-decoration: none;
+        color: rgb(126, 197, 255);
+        font-size: 20px;
+        font-weight: bold;
+        font-family: 'Times New Roman', Times, serif;
+        /* background-color:rgb(101, 224, 255); */
+        /* background-image:linear-gradient(rgb(77, 162, 219) , rgb(193, 240, 255)); */
+        border-radius: 10px;
+   
+    }
+
+    li a:hover{
+        transition:0.3s;
+        color: rgb(255, 255, 255);
+        background-color: rgba(126, 197, 255, 0.568);
+        
+    }
+
+
+</style>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li> <a href="/" >Live Map</a></li>
+                <li> <a href="/ListView" >List View</a></li>
+                <li> <a href="#" >More</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id='map'></div>
+</body>
+
+
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoibG9uZXdvbGY0IiwiYSI6ImNrOWI1a3IwYzAwenAzZnQwMWVrM2h1MHUifQ.MbiB8gNMLzRYPoufnnHmDw';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/dark-v10',
+        zoom: 3
+    });
+</script>
+<script src="index.js"></script>
+
+</html>
